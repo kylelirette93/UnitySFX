@@ -7,11 +7,15 @@ public class TriggerRocket : MonoBehaviour
     public AudioSource rocketSound;
     public ParticleSystem thrusterParticles;
     public GameObject clusterMissle;
+    float timeSinceLaunch;
     
     private void OnTriggerEnter(Collider other)
     {
+        // Activate the sound and the particle system.
         rocketSound.Play();
         thrusterParticles.Play();
+        
+        // Launch the rocket.
         ActivateLaunch();
     }
 
