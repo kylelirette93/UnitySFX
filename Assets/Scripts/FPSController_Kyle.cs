@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FPS_Controller_Kyle : MonoBehaviour
 {
@@ -72,6 +73,11 @@ public class FPS_Controller_Kyle : MonoBehaviour
         // Apply gravity to movement velocity on the y axis
         velocity.y -= gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        if (transform.position.y < -15f)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
 }
