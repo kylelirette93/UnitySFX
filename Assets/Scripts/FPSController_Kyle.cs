@@ -28,9 +28,8 @@ public class FPS_Controller_Kyle : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        // Adjust rotating at start so it's not towards floor or wall
-        lookAngle.y = transform.eulerAngles.y - 10f;
-        lookAngle.x = mainCamera.transform.eulerAngles.x;
+        lookAngle.y = mainCamera.transform.rotation.eulerAngles.y;
+        lookAngle.x = mainCamera.transform.rotation.eulerAngles.x;
     }
 
     void Update()
